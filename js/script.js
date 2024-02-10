@@ -1,10 +1,9 @@
-console.log('Hi!');
+'use strict';
 
-let typs = 1232,
-  words = 'dfndfknl',
-  obj = {
-    main: 1232,
-    name: 4455,
-  };
+const calculator = [];
 
-console.log(obj.name);
+calculator[0] = +prompt('A', '');
+calculator[1] = +prompt('B', '');
+
+console.log(calculator[0] + calculator[1]);
+
