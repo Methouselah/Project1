@@ -1,9 +1,18 @@
 'use strict';
 
-const calculator = [];
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-calculator[0] = +prompt('A', '');
-calculator[1] = +prompt('B', '');
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
 
-console.log(calculator[0] + calculator[1]);
+const lastFilm = prompt('Один из последних просмотренных фильмов', ''),
+  lastFilmGrade = prompt("На сколько оцените его?'", '');
 
+personalMovieDB.movies[lastFilm] = lastFilmGrade;
+
+console.log(personalMovieDB);
