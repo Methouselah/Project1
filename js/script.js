@@ -1,9 +1,13 @@
 'use strict';
 
-const obj = {
-  mainw: 131212,
-  bigings: 1231321313123,
-}
+// Запрашиваем у пользователя имя
+const name = prompt("Введите ваше имя:");
 
-console.log(obj);
-console.log(obj.bigings);
+// Формируем приветствие
+const greeting = "Привет, " + name + "! Добро пожаловать.";
+
+// Выводим приветствие в консоль браузера
+console.log(greeting);
+
+// Выводим приветствие на веб-страницу
+document.write("<h1>" + greeting + "</h1>");
