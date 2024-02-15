@@ -1,42 +1,12 @@
 'use strict';
 
-const name = prompt("Введите ваше имя:");
-const greeting = "Привет, " + name + "! Добро пожаловать.";
+// Проверка типов 
 
-console.log(greeting);
-document.write("<h1>" + greeting + "</h1>");
+let hamburger;
+const fries = NaN;
+const cola = 0;
+const nuggets = 2;
 
-// Запрашиваем у пользователя радиус круга
-const radius = parseFloat(prompt("Введите радиус круга:"));
-
-// Проверяем, что введено число и оно положительное
-if (!isNaN(radius) && radius > 0) {
-    // Вычисляем площадь круга
-    const area = Math.PI * radius * radius;
-
-    // Выводим площадь круга на экран
-    console.log("Площадь круга с радиусом", radius, ":", area);
-} else {
-    // Если введено некорректное значение, выводим сообщение об ошибке
-    console.log("Ошибка: Введите положительное число для радиуса круга.");
+if ((hamburger && cola) || (fries === 3 && nuggets)) {
+	console.log('Done!')
 }
-
-// ---------------------------------------------------------------------
-
-findMissingNumber([1, 2, 4, 5, 6]); // Ожидаемый результат: 3
-findMissingNumber([1, 3, 4, 5]);    // Ожидаемый результат: 2
-findMissingNumber([2, 3, 4, 5]);    // Ожидаемый результат: 1
-
-// ---------------------------------------------------------------------
-
-maxSubarraySum([-2, 1, -3, 4, -1, 2, 1, -5, 4]); // Ожидаемый результат: 6 (подпоследовательность [4, -1, 2, 1])
-
-// ---------------------------------------------------------------------
-const list = new DoublyLinkedList();
-list.insert(1);
-list.insert(2);
-list.insert(3);
-list.print(); // Ожидаемый результат: 1 -> 2 -> 3
-
-list.remove(2);
-list.print(); // Ожидаемый результат: 1 -> 3
