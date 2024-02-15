@@ -1,44 +1,16 @@
 'use strict';
 
-// Место для первой задачи
-function firstTask() {
-    const arr = [3, 5, 8, 16, 20, 23, 50];
-    const result = [];
+const lines =5;
+let result = '';
 
-	for(let i = 0; i < arr.length; i++) {
-		result[i] = arr[i];
+for (let i = 0; i <= lines; i++) {
+	for (let j = 0; j < lines - i; j++) {
+		result += " ";
 	}
-
-	console.log(result);
-    return result;
-}
-// Место для второй задачи
-function secondTask() {
-    const data = [5, 10, 'Shopping', 20, 'Homework'];
-    
-    for (let i = 0; i < data.length; i++) {
-		if (typeof data[i] === 'number') {
-			data[i] *= 2;
-		} else if (typeof data[i] === 'string')  {
-			data[i] += ' - done';
-		}
+	for (let k = 0; k < 2 * i + 1; k++) {
+		result += "*";
 	}
-
-	console.log(data);
-    return data;
+	result += '\n';
 }
 
-
-
-// Место для третьей задачи
-function thirdTask() {
-    const data = [5, 10, 'Shopping', 20, 'Homework'];
-    const result = [];
-
-	for (let i = 1; i <= data.length; i++) {
-		result[i - 1] = data[data.length - i];
-	}
-	console.log(result);
-    return result;
-}
-thirdTask();
+console.log(result);
