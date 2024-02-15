@@ -47,7 +47,7 @@ function fourthTask() {
 		i++;
     }
 }
-
+// 5
 function fifthTask() {
 	const arrayOfNumbers = [];
 
@@ -57,5 +57,4 @@ function fifthTask() {
     console.log(arrayOfNumbers);
 	return arrayOfNumbers
 }
-
 
