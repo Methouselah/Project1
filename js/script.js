@@ -1,12 +1,21 @@
 'use strict';
 
-// Проверка типов 
+// Цикл в цикле 
+// *
+// **
+// ***
+// ****
+// *****
+// ******
 
-let hamburger;
-const fries = NaN;
-const cola = 0;
-const nuggets = 2;
+let result = '';
+const length = 5;
 
-if ((hamburger && cola) || (fries === 3 && nuggets)) {
-	console.log('Done!')
+first:for (let i = 1; i <= 5; i++) {
+    console.log(i);
+    for (let j = 0; j < i; j++) {
+        console.log(j);
+        if (j === 2) break first;
+    }
 }
+console.log(result);
