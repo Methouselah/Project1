@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /* 
 1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
 2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
@@ -11,19 +11,19 @@
 
 4) Потренироваться и переписать цикл еще двумя способами*/
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
 const personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false,
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
+for (let i = 1; i < 2; i++) {
+  const a = prompt("Один из последних просмотренных фильмов?", ""),
+    b = prompt("На сколько оцените его?", "");
+  personalMovieDB.movies[a] = b;
 }
-	for (let i=1; i < 2; i++) {
-		const a = prompt('Один из последних просмотренных фильмов?', ''),
-			b = prompt('На сколько оцените его?', '');
-			personalMovieDB.movies[a] = b
-	}
 
 console.log(personalMovieDB);
