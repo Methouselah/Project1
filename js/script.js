@@ -1,19 +1,22 @@
 "use strict";
 
-function upsideDownTriangle(width) {
-  let triangle = "";
-  for (let i = width; i >= 0; i--) {
-    for (let j = 0; j < width - i; j++) {
-      triangle += " ";
-    }
-    for (let j = 0; j < 2 * i + 1; j++) {
-      triangle += "*";
-    }
-
-    triangle += "\n";
-  }
-
-  return triangle;
+// Место для первой задачи
+function sayHello(name) {
+  return `Привет, ${name}!`;
 }
 
-console.log(triangle(7));
+// Место для второй задачи
+function returnNeighboringNumbers(num) {
+  return [num - 1, num, num + 1];
+}
+
+// Место для третьей задачи
+function getMathResult(a, b) {
+  let result;
+  if (b > 0 || typeof b === "number") {
+    for (let i = 0; i < b; i++) {
+      result += a + a 
+    }
+  }
+  return result;
+}
