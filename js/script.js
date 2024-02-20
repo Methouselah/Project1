@@ -11,11 +11,17 @@ function returnNeighboringNumbers(num) {
 }
 
 // Место для третьей задачи
-function getMathResult(a, b) {
-  let result;
-  if (b > 0 || typeof b === "number") {
-    for (let i = 0; i < b; i++) {
-      result += a + a 
+function getMathResult(num, times) {
+  let result = "";
+  if (typeof times === "string" || times <= 0) {
+    return num;
+  }
+
+  for (let i = 0; i <= times; i++) {
+    if (i === times) {
+      result += `${num * i}`;
+    } else {
+      result += `${num * i}---`;
     }
   }
   return result;
