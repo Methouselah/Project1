@@ -1,28 +1,36 @@
 "use strict";
 
 // Место для первой задачи
-function sayHello(name) {
-  return `Привет, ${name}!`;
+function calculateVolumeAndArea(edge) {
+  let square, volume, result;
+
+  if (typeof edge === "number" && edge > 0 && edge === Math.round(edge)) {
+    square = Math.pow(edge, 3);
+    volume = 6 * Math.pow(edge, 2);
+    result = `Объем куба: ${square}, площадь всей поверхности: ${volume}`;
+  } else {
+    result = "При вычислении произошла ошибка";
+    return result;
+  }
+  return result;
 }
 
 // Место для второй задачи
-function returnNeighboringNumbers(num) {
-  return [num - 1, num, num + 1];
-}
-
-// Место для третьей задачи
-function getMathResult(num, times) {
-  let result = "";
-  if (typeof times === "string" || times <= 0) {
-    return num;
+function getCoupeNumber(number) {
+  let result;
+  if (
+    typeof number !== "number" ||
+    number != Math.round(number) ||
+    number < 0
+  ) {
+    result = "Ошибка. Проверьте правильность введенного номера места";
+    return result;
   }
-
-  for (let i = 0; i <= times; i++) {
-    if (i === times) {
-      result += `${num * i}`;
-    } else {
-      result += `${num * i}---`;
-    }
+  if (number >= 36 || number == 0) {
+    result = "Таких мест в вагоне не существует";
+    return result;
   }
+  result = Math.ceil(number / 4);
+
   return result;
 }
