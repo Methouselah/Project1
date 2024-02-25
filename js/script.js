@@ -12,11 +12,19 @@ function getTimeFromMinutes(param) {
     return "слишком большое число";
   }
 }
-console.log(getTimeFromMinutes(150));
-console.log(getTimeFromMinutes(50));
-console.log(getTimeFromMinutes(0));
-console.log(getTimeFromMinutes(-150));
-console.log(getTimeFromMinutes("helo"));
 
 // Место для второй задачи
-function findMaxNumber() {}
+function findMaxNumber(a, b, c, d) {
+  if (
+    typeof a !== "number" ||
+    typeof b !== "number" ||
+    typeof c !== "number" ||
+    typeof d !== "number"
+  ) {
+    return 0;
+  }
+
+  return Math.max(a, b, c, d);
+}
+
+console.log(findMaxNumber(5, 9, 15));
