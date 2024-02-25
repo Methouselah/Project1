@@ -1,30 +1,32 @@
 "use strict";
 
-// Место для первой задачи
-function getTimeFromMinutes(param) {
-  if (typeof param !== "number" || param < 0 || !Number.isInteger(param)) {
-    return "Ошибка, проверьте данные";
-  }
-
-  if (param <= 600) {
-    return `Это ${Math.trunc(param / 60)} часа и ${param % 60} минут`;
-  } else {
-    return "слишком большое число";
-  }
-}
-
-// Место для второй задачи
-function findMaxNumber(a, b, c, d) {
+function fib(num) {
   if (
-    typeof a !== "number" ||
-    typeof b !== "number" ||
-    typeof c !== "number" ||
-    typeof d !== "number"
+    typeof num !== "number" ||
+    num <= 0 ||
+    !parseInt(num) ||
+    !Number.isInteger(num)
   ) {
-    return 0;
+    return "";
   }
 
-  return Math.max(a, b, c, d);
+  let result = "";
+  let first = 0;
+  let second = 1;
+
+  for (let i = 0; i < num; i++) {
+    if (i + 1 === num) {
+      result += `${first}`;
+    } else {
+      result += `${first} `;
+    }
+
+    let third = first + second;
+    first = second;
+    second = third;
+  }
+
+  return result;
 }
 
-console.log(findMaxNumber(5, 9, 15));
+console.log(fib(10));
