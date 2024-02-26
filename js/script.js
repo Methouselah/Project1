@@ -1,32 +1,15 @@
 "use strict";
 
-function fib(num) {
-  if (
-    typeof num !== "number" ||
-    num <= 0 ||
-    !parseInt(num) ||
-    !Number.isInteger(num)
-  ) {
-    return "";
-  }
+let person = {
+  name: "Vasia",
+  lastname: "grigoriev",
+  params: {
+    width: 33,
+    old: 44,
+  },
+};
 
-  let result = "";
-  let first = 0;
-  let second = 1;
-
-  for (let i = 0; i < num; i++) {
-    if (i + 1 === num) {
-      result += `${first}`;
-    } else {
-      result += `${first} `;
-    }
-
-    let third = first + second;
-    first = second;
-    second = third;
-  }
-
-  return result;
+for (const key in person) {
+  let element = person[key];
+  console.log(element);
 }
-
-console.log(fib(10));
