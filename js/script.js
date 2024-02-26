@@ -9,7 +9,16 @@ let person = {
   },
 };
 
-for (const key in person) {
-  let element = person[key];
-  console.log(element);
+const { width, old } = person.params;
+
+console.log(width);
+
+for (let key in person) {
+  if (typeof person[key] === "object") {
+    for (let i in person[key]) {
+      console.log(person[key][i]);
+    }
+  } else {
+    console.log(person[key]);
+  }
 }
