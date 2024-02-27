@@ -12,4 +12,5 @@ arr.forEach(function (value, index, arr) {
 
 const obj = {
   name: "scriptions",
+  age: 342432,
 };
