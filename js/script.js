@@ -1,16 +1,7 @@
 "use strict";
 
-arr.forEach(function (value, index, arr) {
-  console.log(`${index}: ${value} in ${arr}`);
-});
+arr = [4, 5, 6, 6, 7, 7, 7];
 
-const arr = [1, 2, 3, 4, 5];
+arr.push(1, 2, 3);
 
-arr.forEach(function (value, index, arr) {
-  console.log(`${index}: ${value} in ${arr}`);
-});
-
-const obj = {
-  name: "scriptions",
-  age: 342432,
-};
+console.log(arr);
