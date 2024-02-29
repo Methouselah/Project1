@@ -1,6 +1,6 @@
 "use strict";
 
-arr = [1, "text", {}, [], 4, "text2"];
+const arr = [1, "text", {}, [], 4, "text2"];
 
 let obj = {
   name: "fin",
