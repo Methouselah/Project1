@@ -1,22 +1,35 @@
 "use strict";
 
-const arr = [
-  1,
-  "text",
-  {
-    a: 4,
-    b: 5,
+const personalPlanPeter = {
+  name: "Peter",
+  age: "29",
+  skills: {
+    languages: ["ru", "eng"],
+    programmingLangs: {
+      js: "20%",
+      php: "10%",
+    },
+    exp: "1 month",
   },
-  [],
-  4,
-  "text2",
-];
-const nums = [2, 4, 5];
+  showAgeAndLangs: function (plan) {
+    const { age } = plan,
+      { languages } = plan.skills;
+    return `Мне ${age} и я владею языками: ${languages
+      .join(" ")
+      .toUpperCase()}`;
+  },
+};
 
-const copy = [...arr];
+function showExperience(plan) {
+  return `${plan.skills.exp}`;
+}
 
-copy[4] = 11;
-copy[2].b = 11;
-
-console.log(arr);
-console.log(copy);
+function showProgrammingLangs(plan) {
+  const { programmingLangs } = plan.skills;
+  let result = "";
+  for (let key in programmingLangs) {
+    result += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+  }
+  return result;
+}
+console.log(showProgrammingLangs(personalPlanPeter));
