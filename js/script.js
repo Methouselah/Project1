@@ -1,17 +1,35 @@
 "use strict";
-const family = ["Peter", "Ann", "Alex", "Linda"];
 
-function showFamily(arr) {
-  if (arr.length === 0) {
-    return "Семья пуста";
+const someString = "This is some strange string";
+
+function reverse(str) {
+  if (typeof str !== "string") {
+    return "Ошибка!";
   }
-  return `Семья состоит из: ${arr.join(" ")}`;
+
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+
+  //  return str.split('').reverse().join('');
+
+  return newStr;
 }
 
-const favoriteCities = ["liSBon", "ROME", "miLan", "Dublin"];
+const baseCurrencies = ["USD", "EUR"];
+const additionalCurrencies = ["UAH", "RUB", "CNY"];
 
-function standardizeStrings(arr) {
-  arr.forEach((element) => {
-    console.log(element.toLowerCase());
-  });
+function availableCurr(arr, missingCurr) {
+  let result = "";
+  result = arr.length === 0 ? "Нет доступных валют" : `Доступные валюты:\n`;
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] === missingCurr) {
+      continue;
+    }
+    result += `${arr[i]}\n`;
+  }
+  return result;
 }
+
+console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], "RUB"));
