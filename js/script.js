@@ -1,16 +1,17 @@
 "use strict";
-
-const car = {
-  width: 3.5,
-  color: "white",
-  motor: 350,
+/**
+ * @param {number} n
+ * @return {Function} counter
+ */
+var createCounter = function (n) {
+  return function () {
+    return n++;
+  };
 };
 
-const mersedes = {
-  width: 3.0,
-  motor: 250,
-};
-
-mersedes.__proto__ = car; // устаревший способ
-
-Object.setPrototypeOf(mersedes, car);
+/**
+ * const counter = createCounter(10)
+ * counter() // 10
+ * counter() // 11
+ * counter() // 12
+ */
