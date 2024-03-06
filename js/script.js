@@ -1,17 +1,14 @@
 "use strict";
 /**
- * @param {number} n
- * @return {Function} counter
+ * @return {Function}
  */
-var createCounter = function (n) {
-  return function () {
-    return n++;
+var createHelloWorld = function () {
+  return function (...args) {
+    return "Hello World";
   };
 };
 
 /**
- * const counter = createCounter(10)
- * counter() // 10
- * counter() // 11
- * counter() // 12
+ * const f = createHelloWorld();
+ * f(); // "Hello World"
  */
