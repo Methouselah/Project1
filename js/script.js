@@ -18,3 +18,7 @@ var expect = function (val) {
 };
 
 console.log(expect(5).toBe(5));
+
+let test = 5 == 4 ? true : false;
+
+console.log(test);
