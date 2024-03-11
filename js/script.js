@@ -1,24 +1,14 @@
 "use strict";
 
-var expect = function (val) {
+/**
+ * @param {integer} init
+ * @return { increment: Function, decrement: Function, reset: Function }
+ */
+var createCounter = function (init) {
+  let count = init;
   return {
-    toBe: function (expected) {
-      if (val !== expected) {
-        throw new Error("Not Equal");
-      }
-      return true;
-    },
-    notToBe: function (notExpected) {
-      if (val === notExpected) {
-        throw new Error("Equal");
-      }
-      return true;
-    },
+    increment: () => ++count,
+    decrement: () => --count,
+    reset: () => (init = count),
   };
 };
-
-console.log(expect(5).toBe(5));
-
-let test = 5 == 4 ? true : false;
-
-console.log(test);
