@@ -1,14 +1,8 @@
 "use strict";
 
 /**
- * @param {integer} init
- * @return { increment: Function, decrement: Function, reset: Function }
+ * @param {number[]} arr
+ * @param {Function} fn
+ * @return {number[]}
  */
-var createCounter = function (init) {
-  let count = init;
-  return {
-    increment: () => ++count,
-    decrement: () => --count,
-    reset: () => (init = count),
-  };
-};
+var map = function (arr, fn) {};
