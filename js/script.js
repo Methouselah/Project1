@@ -1,42 +1,16 @@
 "use strict";
 
-const students = [
-  "Peter",
-  "Andrew",
-  "Ann",
-  "Mark",
-  "Josh",
-  "Sandra",
-  "Cris",
-  "Bernard",
-  "Takesi",
-  "Sam",
-];
-
-function sortStudentsByGroups(arr) {
-  arr.sort();
-  const a = [],
-    b = [],
-    c = [],
-    rest = [];
-
+/**
+ * @param {number[]} arr
+ * @param {Function} fn
+ * @return {number[]}
+ */
+var map = function (arr, fn) {
+  let arr = arr,
+    newArr = [];
   for (let i = 0; i < arr.length; i++) {
-    if (i < 3) {
-      a.push(arr[i]);
-    } else if (i < 6) {
-      b.push(arr[i]);
-    } else if (i < 9) {
-      c.push(arr[i]);
-    } else {
-      rest.push(arr[i]);
-    }
+    newArr.push(fn(arr[i]));
   }
-  return [
-    a,
-    b,
-    c,
-    `Оставшиеся студенты: ${rest.length === 0 ? "-" : rest.join(", ")}`,
-  ];
-}
 
-console.log(sortStudentsByGroups(students));
+  return newArr;
+};
