@@ -13,11 +13,33 @@ const students = [
   "Cris",
   "Bernard",
   "Takesi",
-  "Sam",
 ];
 
 function sortStudentsByGroups(arr) {
-  return arr;
+  const a = [],
+    b = [],
+    c = [],
+    rest = [];
+  arr.sort();
+
+  for (let i = 0; i < arr.length; i++) {
+    if (i < 3) {
+      a.push(arr[i]);
+    } else if (i < 6) {
+      b.push(arr[i]);
+    } else if (i < 9) {
+      c.push(arr[i]);
+    } else {
+      rest.push(arr[i]);
+    }
+  }
+
+  return [
+    a,
+    b,
+    c,
+    `Оставшиеся студенты: ${rest.length !== 0 ? rest.join(", ") : "-"} `,
+  ];
 }
 
-output.innerHTML = students;
+console.log(sortStudentsByGroups(students));
