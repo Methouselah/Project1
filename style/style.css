@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+body {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #222;
+  color: #fff;
+  margin: 0;
+  padding: 15px;
+}
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+.output {
+  margin-bottom: 20px;
+  width: calc(100% - 20px);
+  min-height: 100px;
+  padding: 10px;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  resize: vertical;
+}
+
+.button {
+  font-family: "Source Code Pro", monospace;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* --------------------------------------------- */
+/* Стилизация полосы прокрутки */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}

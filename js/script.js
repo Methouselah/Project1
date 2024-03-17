@@ -1,16 +1,23 @@
 "use strict";
+const input = document.getElementById("input"),
+  output = document.getElementById("output"),
+  button = document.getElementById("button");
 
-/**
- * @param {number[]} arr
- * @param {Function} fn
- * @return {number[]}
- */
-var map = function (arr, fn) {
-  let arr = arr,
-    newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(fn(arr[i]));
-  }
+const students = [
+  "Peter",
+  "Andrew",
+  "Ann",
+  "Mark",
+  "Josh",
+  "Sandra",
+  "Cris",
+  "Bernard",
+  "Takesi",
+  "Sam",
+];
 
-  return newArr;
-};
+function sortStudentsByGroups(arr) {
+  return arr;
+}
+
+output.innerHTML = students;
