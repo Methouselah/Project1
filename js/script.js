@@ -7,7 +7,6 @@ const input = document.getElementById("input");
 const inputClass = document.getElementsByClassName("input");
 
 console.log(div);
-console.log(divs);
-console.log(inputs);
-console.log(input);
-console.log(inputClass);
+
+input.style.borderRadius = "10px";
+input.style.background = "#000";
