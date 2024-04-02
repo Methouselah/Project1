@@ -1,18 +1,10 @@
 "use strict";
-// поиск по селектору (элемент)
-const div = document.querySelector("div");
 
-// поиск по селектору всех элементов (NodeList)
-const divs = document.querySelectorAll("div");
+const wrapper = document.querySelector(".wrapper");
 
-// поиск по названию тега (HTMLCollection)
-const inputs = document.getElementsByTagName("input");
+const one = wrapper.querySelectorAll(".one");
+const two = wrapper.querySelectorAll(".two");
 
-// поиск по id (элемент)
-const input = document.getElementById("input");
-
-// поиск по class (HTMLCollection)
-const inputClass = document.getElementsByClassName("input");
-
-const p = document.createElement("p");
-console.log(p);
+console.log(wrapper);
+console.log(one);
+console.log(two);
