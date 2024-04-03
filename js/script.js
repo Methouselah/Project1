@@ -49,3 +49,8 @@ movieDB.movies.forEach((item, index) => {
     <div class="delete"></div>
   </li>`;
 });
+
+const title = document.querySelector(".title");
+title.addEventListener("click", (e) => {
+  console.log(e);
+});
