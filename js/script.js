@@ -49,3 +49,42 @@ movieDB.movies.forEach((item, index) => {
     <div class="delete"></div>
   </li>`;
 });
+
+// видео
+
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("myVideo");
+  const playPauseBtn = document.getElementById("playPauseBtn");
+  const volumeRange = document.getElementById("volumeRange");
+  const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+  playPauseBtn.addEventListener("click", function () {
+    if (video.paused || video.ended) {
+      video.play();
+      playPauseBtn.innerHTML = "Pause";
+    } else {
+      video.pause();
+      playPauseBtn.innerHTML = "Play";
+    }
+  });
+
+  video.addEventListener("ended", function () {
+    playPauseBtn.innerHTML = "Play";
+  });
+
+  volumeRange.addEventListener("input", function () {
+    video.volume = volumeRange.value;
+  });
+
+  fullscreenBtn.addEventListener("click", function () {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
+  });
+});

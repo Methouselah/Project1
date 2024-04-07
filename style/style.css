@@ -289,3 +289,28 @@
   width: 100%;
   margin-bottom: 10px;
 }
+
+.video-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video {
+  width: 100%;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.controls button,
+.controls input[type="range"] {
+  margin: 0 5px;
+}
