@@ -37,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
   const bg = document.querySelector(".promo__bg"),
-    interactiveList = document.querySelector(".promo__interactive-list");
+    interactiveList = document.querySelector(".promo__interactive-list"),
+    form = document.querySelector(".add"),
+    formInput = form.querySelector(".adding__input"),
+    formBtn = form.querySelector("button");
 
   // __________________ 1 __________________
 
@@ -52,13 +55,26 @@ document.addEventListener("DOMContentLoaded", () => {
   bg.style.background = `url("../foto/bg.jpg") center / cover no-repeat`;
 
   // __________________ 4 __________________
-  interactiveList.innerHTML = "";
-  movieDB.movies.sort();
+  function showMovies({ movies }) {
+    interactiveList.innerHTML = "";
+    movies.sort();
 
-  movieDB.movies.forEach((item, index) => {
-    interactiveList.innerHTML += `<li class="promo__interactive-item">
+    movies.forEach((item, index) => {
+      interactiveList.innerHTML += `<li class="promo__interactive-item">
       ${index + 1}. ${item}
       <div class="delete"></div>
     </li>`;
+    });
+  }
+  showMovies(movieDB);
+  // __________________ 2.1 __________________
+  formBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log(formInput.value);
+    movieDB.movies.push(formInput.value);
+    showMovies(movieDB);
+
+    formInput.value = "";
   });
 });

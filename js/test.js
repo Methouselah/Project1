@@ -101,5 +101,5 @@ function getTotalProgressByRecursion(data) {
 
 const result2 = getTotalProgressByRecursion(students);
 
-console.log(result2[0] / result2[1]);
-console.log(getTotalProgressByIteration(students));
+// console.log(result2[0] / result2[1]);
+// console.log(getTotalProgressByIteration(students));
