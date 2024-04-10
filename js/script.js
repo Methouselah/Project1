@@ -1,106 +1,64 @@
 "use strict";
-// --------------------- example 1 ---------------------
-function pow(x, y) {
-  let result = 1;
-  for (let i = 0; i < y; i++) {
-    result *= x;
-  }
-  return result;
-}
 
-function pow(x, y) {
-  if (y === 0) {
-    return x;
-  } else {
-    return x * pow(x, y - 1);
-  }
-}
+/* Задания на урок 1:
+1) Удалить все рекламные блоки со страницы (правая часть сайта)
+2) Изменить жанр фильма, поменять "комедия" на "драма"
+3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
+Реализовать только при помощи JS
+4) Список фильмов на странице сформировать на основании данных из этого JS файла.
+Отсортировать их по алфавиту 
+5) Добавить нумерацию выведенных фильмов */
 
-const result = [];
-result.push(pow(2, 2));
-result.push(pow(2, 3));
-result.push(pow(2, 4));
-// console.log(result);
+/* Задания на урок 2:
 
-// --------------------- example 2 ---------------------
+1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" - 
+новый фильм добавляется в список. Страница не должна перезагружаться.
+Новый фильм должен добавляться в movieDB.movies.
+Для получения доступа к значению input - обращаемся к нему как input.value;
+P.S. Здесь есть несколько вариантов решения задачи, принимается любой, но рабочий.
 
-let students = {
-  js: [
-    {
-      name: "John",
-      progress: 100,
-    },
-    {
-      name: "Ivan",
-      progress: 60,
-    },
-  ],
-  html: {
-    basic: [
-      {
-        name: "Peter",
-        progress: 20,
-      },
-      {
-        name: "Ann",
-        progress: 18,
-      },
+2) Если название фильма больше, чем 21 символ - обрезать его и добавить три точки
+
+3) При клике на мусорную корзину - элемент будет удаляться из списка (сложно)
+
+4) Если в форме стоит галочка "Сделать любимым" - в консоль вывести сообщение: 
+"Добавляем любимый фильм"
+
+5) Фильмы должны быть отсортированы по алфавиту */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const movieDB = {
+    movies: [
+      "Логан",
+      "Лига справедливости",
+      "Ла-ла лэнд",
+      "Одержимость",
+      "Скотт Пилигрим против...",
     ],
-    pro: [
-      {
-        name: "Sam",
-        progress: 10,
-      },
-    ],
-  },
-};
+  };
+  const bg = document.querySelector(".promo__bg"),
+    interactiveList = document.querySelector(".promo__interactive-list");
 
-function getTotalProgressByIteration(data) {
-  let total = 0;
-  let students = 0;
+  // __________________ 1 __________________
 
-  for (const course of Object.values(data)) {
-    if (Array.isArray(course)) {
-      students += course.length;
-      for (let item of course) {
-        total += item.progress;
-      }
-    } else {
-      for (const subCourse of Object.values(course)) {
-        if (Array.isArray(subCourse)) {
-          students += subCourse.length;
-          for (let item of subCourse) {
-            total += item.progress;
-          }
-        }
-      }
-    }
-  }
+  document.querySelectorAll(".promo__adv img").forEach((item) => {
+    item.remove();
+  });
 
-  return total / students;
-}
+  // __________________ 2 __________________
+  document.querySelector(".promo__genre").innerHTML = "драма";
 
-function getTotalProgressByRecursion(data) {
-  if (Array.isArray(data)) {
-    let total = 0;
+  // __________________ 3 __________________
+  bg.style.background = `url("../foto/bg.jpg") center / cover no-repeat`;
 
-    for (let i = 0; i < data.length; i++) {
-      total += data[i].progress;
-    }
-    return [total, data.length];
-  } else {
-    let total = [0, 0];
+  // __________________ 4 __________________
+  interactiveList.innerHTML = "";
+  movieDB.movies.sort();
 
-    for (let subData of Object.values(data)) {
-      const subDataArr = getTotalProgressByRecursion(subData);
-      total[0] += subDataArr[0];
-      total[1] += subDataArr[1];
-    }
-    return total;
-  }
-}
-
-const result2 = getTotalProgressByRecursion(students);
-
-console.log(result2[0] / result2[1]);
-console.log(getTotalProgressByIteration(students));
+  movieDB.movies.forEach((item, index) => {
+    interactiveList.innerHTML += `<li class="promo__interactive-item">
+      ${index + 1}. ${item}
+      <div class="delete"></div>
+    </li>`;
+  });
+});
