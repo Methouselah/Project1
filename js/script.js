@@ -70,11 +70,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // __________________ 2.1 __________________
   formBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
-    console.log(formInput.value);
-    movieDB.movies.push(formInput.value);
+    if (formInput.value.length > 21) {
+      movieDB.movies.push(formInput.value.substring(0, 18) + "...");
+      console.log(formInput.value.substring(0, 18) + "...");
+    } else {
+      movieDB.movies.push(formInput.value);
+    }
     showMovies(movieDB);
 
     formInput.value = "";
   });
 });
+
+// __________________ 2.2 __________________
