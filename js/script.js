@@ -22,7 +22,7 @@ P.S. Здесь есть несколько вариантов решения з
 3) При клике на мусорную корзину - элемент будет удаляться из списка (сложно)
 
 4) Если в форме стоит галочка "Сделать любимым" - в консоль вывести сообщение: 
-"Добавляем любимый фильм"
+"Добавляем любимый фильм" 
 
 5) Фильмы должны быть отсортированы по алфавиту */
 
@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     interactiveList = document.querySelector(".promo__interactive-list"),
     form = document.querySelector(".add"),
     formInput = form.querySelector(".adding__input"),
-    formBtn = form.querySelector("button");
+    formBtn = form.querySelector("button"),
+    trash = document.querySelectorAll(".delete"),
+    checkbox = document.querySelector('input[type="checkbox"]');
 
   // __________________ 1 __________________
 
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     movies.forEach((item, index) => {
       interactiveList.innerHTML += `<li class="promo__interactive-item">
-      ${index + 1}. ${item}
+      ${index + 1}. ${item} 
       <div class="delete"></div>
     </li>`;
     });
@@ -70,16 +72,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // __________________ 2.1 __________________
   formBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    if (formInput.value.length > 21) {
-      movieDB.movies.push(formInput.value.substring(0, 18) + "...");
-      console.log(formInput.value.substring(0, 18) + "...");
-    } else {
-      movieDB.movies.push(formInput.value);
+    let inputValue = formInput.value;
+
+    if (checkbox.checked) {
+      const hart = "<span></span>";
+      inputValue += ` ${hart}`;
     }
+
+    if (inputValue.length > 21) {
+      movieDB.movies.push(inputValue.substring(0, 18) + "...");
+      console.log(inputValue.substring(0, 18) + "...");
+    } else {
+      movieDB.movies.push(inputValue);
+    }
+
     showMovies(movieDB);
 
     formInput.value = "";
   });
-});
 
-// __________________ 2.2 __________________
+  // __________________ 2.3 __________________
+
+  trash.forEach((item, index) => {
+    item.addEventListener("click", (e) => {
+      item.parentElement.remove();
+      delete movieDB.movies[index];
+    });
+  });
+
+  // __________________ 2.4 __________________
+});
