@@ -1,10 +1,14 @@
 "use strict";
 
-function loadScript(src) {
-  const script = document.createElement("script");
-  script.src = src;
-  script.async = false;
-  document.body.append(script);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.querySelector(".input"),
+    output = document.querySelector(".output"),
+    btn = document.querySelector("button"),
+    wrapper = document.querySelector(".wrapper");
 
-loadScript("js/test.js");
+  wrapper.addEventListener("click", (e) => {
+    if (e.target && e.target.tagName == "BUTTON") {
+      console.dir(e.target);
+    }
+  });
+});

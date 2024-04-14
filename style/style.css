@@ -57,6 +57,19 @@ body {
   background-color: #0056b3;
 }
 
+.wrapper {
+  background-color: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.btn_block {
+  height: 50px;
+  width: 100px;
+  margin-right: 10px;
+}
+
 /* --------------------------------------------- */
 /* Стилизация полосы прокрутки */
 ::-webkit-scrollbar {
