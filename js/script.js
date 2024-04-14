@@ -1,14 +1,3 @@
-"use strict";
-
-/* Задания на урок 1:
-1) Удалить все рекламные блоки со страницы (правая часть сайта)
-2) Изменить жанр фильма, поменять "комедия" на "драма"
-3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
-Реализовать только при помощи JS
-4) Список фильмов на странице сформировать на основании данных из этого JS файла.
-Отсортировать их по алфавиту 
-5) Добавить нумерацию выведенных фильмов */
-
 /* Задания на урок 2:
 
 1) Реализовать функционал, что после заполнения формы и нажатия кнопки "Подтвердить" - 
@@ -25,6 +14,7 @@ P.S. Здесь есть несколько вариантов решения з
 "Добавляем любимый фильм" 
 
 5) Фильмы должны быть отсортированы по алфавиту */
+"use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
   const movieDB = {
@@ -36,13 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "Скотт Пилигрим против...",
     ],
   };
+
   const bg = document.querySelector(".promo__bg"),
     interactiveList = document.querySelector(".promo__interactive-list"),
     form = document.querySelector(".add"),
     formInput = form.querySelector(".adding__input"),
     formBtn = form.querySelector("button"),
     trash = document.querySelectorAll(".delete"),
-    checkbox = document.querySelector('input[type="checkbox"]');
+    checkbox = document.querySelector('[type="checkbox"]');
 
   // __________________ 1 __________________
 
@@ -70,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   showMovies(movieDB);
   // __________________ 2.1 __________________
-  formBtn.addEventListener("click", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     let inputValue = formInput.value;
 
@@ -88,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showMovies(movieDB);
 
-    formInput.value = "";
+    e.target.reset();
   });
 
   // __________________ 2.3 __________________
