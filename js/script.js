@@ -1,14 +1,7 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.querySelector(".input"),
-    output = document.querySelector(".output"),
-    btn = document.querySelector("button"),
-    wrapper = document.querySelector(".wrapper");
-
-  wrapper.addEventListener("click", (e) => {
-    if (e.target && e.target.tagName == "BUTTON") {
-      console.dir(e.target);
-    }
-  });
+document.addEventListener("click", () => {
+  const tabs = document.querySelectorAll(".tabheader__item"),
+    tabsContent = document.querySelectorAll(".tabcontent"),
+    tabsParent = document.querySelector(".tabheader__items");
 });
