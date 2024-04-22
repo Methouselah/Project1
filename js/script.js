@@ -1,17 +1,15 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const output = document.querySelector("#output"),
-    btn = document.querySelector(".button"),
-    input = document.querySelector("input");
+const output = document.querySelector("#output"),
+  btn = document.querySelector(".button"),
+  input = document.querySelector("#input");
 
-  let i = 0;
-  function log() {
-    console.log("lekdfdlmdfld");
-    i++;
-    if (i === 10) {
-      clearTimeout(timer2);
-    }
-    timer2 = setTimeout(log, 100);
+let leakedArray = [];
+
+function createMemoryLeak() {
+  for (let i = 0; i < 10000; i++) {
+    leakedArray.push(new Array(1000000).join("x"));
   }
-});
+}
+
+createMemoryLeak();
