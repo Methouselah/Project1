@@ -4,34 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link type="image/x-icon" href="foto/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="style/normalize.css" />
     <link rel="stylesheet" href="style/style.css" />
-    <title>Udemy practice</title>
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+
+    <title>Profile site</title>
   </head>
   <body>
-    <div class="experiment">
-      <ol start="5">
-        <li><a href="http://www.google.com" draggable="true">LINK1</a></li>
-        <li><a href="http://www.google.com">LINK2</a></li>
-        <li><a href="http://www.google.com">LINK3</a></li>
-        <li><a href="http://www.google.com">LINK4</a></li>
-        <li><a href="http://www.google.com">LINK5</a></li>
-      </ol>
-    </div>
-    <div class="container">
-      <h1>JavaScript IN/OUTput</h1>
-      <div class="form__group field">
-        <input
-          type="input"
-          class="form__field"
-          placeholder="Search.."
-          id="input"
-          required
-        />
-        <label for="name" class="form__label">Search</label>
-      </div>
-      <div class="output" id="output"></div>
-      <button class="button btn-8"><span>Send</span></button>
-    </div>
+    <header class="header">
+      <a href="#" class="header_logo">
+        <img src="img/triangle.png" alt="logo" />
+      </a>
+      <nav class="header_nav">
+        <a class="header_nav_item" href="#">About</a>
+        <a class="header_nav_item" href="#">Work</a>
+      </nav>
+    </header>
+    <main>
+      <article class="banner">
+        <h2 class="banner_title">Hello, I’m Arlen.<br />I’m a designer.</h2>
+        <p class="banner_text">
+          I have 13 years’ experience at Airbnb, Google, Dropbox, Halter, and
+          Clubhouse.
+        </p>
+        <p class="banner_text">
+          I value clarity, empathy, and integrity above all else. These ideals
+          guide my approach to problem solving and life in general.
+        </p>
+      </article>
+    </main>
     <script src="js/script.js"></script>
   </body>
 </html>

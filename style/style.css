@@ -1,12 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic-ext);
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Roboto, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 a {
   text-decoration: none;
+  color: white;
 }
 h1,
 h2 {
@@ -15,173 +15,85 @@ h2 {
 
 body {
   background: #f6b17a;
-  color: white;
+  color: black;
 }
 
-.container {
-  background-color: #2d3250;
-  width: 800px;
-  height: 450px;
-  margin: 50px auto;
+/* ============================ HEADER ============================ */
+
+.header {
   padding: 20px;
-  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_logo img {
+  max-width: 50px;
 }
 
-.output {
-  width: 100%;
-  height: 200px;
-  background-color: black;
-  border-radius: 25px;
-  margin: 30px 0 30px 0;
-  color: white;
-  padding: 20px;
-  font-weight: 700;
-  font-size: 23px;
+.header_nav {
+  font-size: 24px;
 }
-.button {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  outline: none;
+.header_nav_item {
+  margin-right: 20px;
+  text-decoration: none; /* Убираем стандартное подчеркивание */
+  color: #000; /* Цвет текста */
+  position: relative; /* Для позиционирования псевдоэлемента */
+  padding: 5px 0; /* Внутренний отступ для более красивого эффекта */
+  transition: color 0.3s ease; /* Плавный переход цвета */
 }
-.btn-8 {
-  background-color: #d20062;
-  background-image: linear-gradient(315deg, #d6589f 0%, #d20062 74%);
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
-.btn-8 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.btn-8:before,
-.btn-8:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 0;
-  background: #d20062;
-  transition: all 0.3s ease;
-}
-.btn-8:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-8:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-8:hover:before {
-  height: 100%;
-}
-.btn-8:hover:after {
-  width: 100%;
-}
-.btn-8:hover {
-  background: transparent;
-}
-.btn-8 span:hover {
-  color: #d20062;
-}
-.btn-8 span:before,
-.btn-8 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  background: #d20062;
-  transition: all 0.3s ease;
-}
-.btn-8 span:before {
-  width: 2px;
-  height: 0%;
-}
-.btn-8 span:after {
-  height: 2px;
-  width: 0%;
-}
-.btn-8 span:hover:before {
-  height: 100%;
-}
-.btn-8 span:hover:after {
-  width: 100%;
+.header_nav_item:last-child {
+  margin-right: 10px;
 }
 
-.form__group {
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 50%;
-  margin-bottom: 10px;
+/* Псевдоэлемент для подчеркивания */
+.header_nav_item::after {
+  content: ""; /* Контент псевдоэлемента */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 0; /* Слева */
+  bottom: 0; /* Внизу */
+  width: 100%; /* Ширина подчеркивания */
+  height: 2px; /* Толщина подчеркивания */
+  background-color: #000; /* Цвет подчеркивания */
+  transform: scaleX(0); /* Начальное состояние - подчеркивания нет */
+  transform-origin: bottom right; /* Начало анимации */
+  transition: transform 0.3s ease; /* Плавный переход */
 }
 
-.form__field {
-  font-family: inherit;
-  width: 100%;
-  border: 0;
-  border-bottom: 2px solid #fff;
-  outline: 0;
-  font-size: 1.3rem;
-  color: #fff;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
+/* Эффект при наведении */
+.header_nav_item:hover::after {
+  transform: scaleX(1); /* Подчеркивание появляется */
+  transform-origin: bottom left; /* Начало анимации */
+}
 
-  &::placeholder {
-    color: transparent;
-  }
+/* ============================ BANNER ============================ */
+.banner {
+  max-width: 960px;
+  margin: 62px auto;
+}
+.banner_title {
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 88px;
+}
+.banner_text {
+  font-size: 16px;
+  line-height: 28px;
+}
 
-  &:placeholder-shown ~ .form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
+@media (max-width: 1020px) {
+  .banner {
+    max-width: auto;
+    margin: 62px 32px;
   }
 }
 
-.form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.form__field:focus {
-  ~ .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #d20062;
-    font-weight: 700;
+@media (max-width: 700px) {
+  .banner {
+    max-width: auto;
+    margin: 62px 20px;
   }
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #d6589f, #d20062);
-  border-image-slice: 1;
-}
-/* reset input */
-.form__field {
-  &:required,
-  &:invalid {
-    box-shadow: none;
+  .banner_title {
+    font-size: 48px;
+    line-height: 56px;
   }
 }
-/* -------------------------------------------- */
