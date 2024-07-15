@@ -26,8 +26,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header_logo img {
+.header_logo_img {
   max-width: 50px;
+  transition: transform 0.2s ease-out;
 }
 
 .header_nav {
