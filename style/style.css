@@ -25,10 +25,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
+
 .header_logo_img {
-  max-width: 50px;
+  max-width: 40px;
   transition: transform 0.2s ease-out;
+  position: fixed;
+  top: 20px;
+  left: 20px;
 }
 
 .header_nav {
