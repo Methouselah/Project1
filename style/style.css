@@ -2,141 +2,42 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 a {
   text-decoration: none;
   color: white;
 }
-h1,
+h1 {
+  font-size: 36px;
+}
 h2 {
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 body {
   background: #f6b17a;
   color: black;
+  padding: 30px;
 }
 
-/* ============================ HEADER ============================ */
-
-.header {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+li {
+  margin: 0 0 10px 30px;
+}
+ul {
+  margin-top: 10px;
 }
 
-.header_logo_img {
-  max-width: 40px;
-  transition: transform 0.2s ease-out;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-}
-
-.header_nav {
-  font-size: 24px;
-}
-.header_nav_item {
-  margin-right: 20px;
-  text-decoration: none;
-  color: #000;
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.3s ease;
-}
-.header_nav_item:last-child {
-  margin-right: 10px;
-}
-
-.header_nav_item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-.header_nav_item:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-/* ============================ BANNER ============================ */
-.banner {
-  max-width: 960px;
-  margin: 62px auto;
-}
-.banner_title {
-  font-size: 72px;
-  font-weight: 400;
-  line-height: 88px;
-}
-.banner_text {
-  font-size: 16px;
-  line-height: 28px;
-}
-
-@media (max-width: 1020px) {
-  .banner {
-    max-width: auto;
-    margin: 62px 32px;
+@media (min-width: 1000px) {
+  main {
+    display: flex;
   }
-}
 
-@media (max-width: 700px) {
-  .banner {
-    max-width: auto;
-    margin: 62px 20px;
-  }
-  .banner_title {
-    font-size: 48px;
-    line-height: 56px;
-  }
-}
-/* ============================ Появление текста с эффектом печатной машинки ============================ */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-  margin: 0;
-}
-
-.typewriter h1 {
-  overflow: hidden; /* Ensures the content is hidden initially */
-  border-right: 0.15em solid orange; /* Adds the "cursor" */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Centers the element */
-  letter-spacing: 0.15em; /* Adjusts the spacing between letters */
-  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* The cursor blink effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
+  article {
+    margin-right: 20px;
   }
 }
