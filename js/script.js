@@ -1,15 +1,19 @@
 "use strict";
 
-document.addEventListener('DOMContentLoaded', function() {
-  const hoverElement = document.querySelector('.header__nav__link');
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerMenu = document.querySelector(".burger-menu"),
+    content = document.querySelector(".content"),
+    body = document.querySelector("body");
 
-  hoverElement.addEventListener('mouseover', function() {
-      hoverElement.style.backgroundColor = '#d1e7dd';
-      hoverElement.textContent = 'Mouse is over!';
-  });
-
-  hoverElement.addEventListener('mouseout', function() {
-      hoverElement.style.backgroundColor = '#e9ecef';
-      hoverElement.textContent = 'Hover over me!';
+  burgerMenu.addEventListener("click", (e) => {
+    if (content.classList[1] == "active") {
+      content.classList.remove("active");
+      burgerMenu.classList.remove("active");
+      body.classList.remove("active");
+    } else {
+      content.classList.add("active");
+      burgerMenu.classList.add("active");
+      body.classList.add("active");
+    }
   });
 });
