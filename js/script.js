@@ -1,3 +1,5 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {});
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("start");
+});

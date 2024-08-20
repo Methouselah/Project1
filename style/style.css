@@ -1,5 +1,6 @@
 @import url("reset.css");
 
+/* Прижатие footer к полу */
 .wrapper {
   min-height: 100%;
   overflow: hidden;
@@ -15,4 +16,14 @@
 
 .content {
   flex: 1 1 auto;
+}
+/*----------------------------*/
+
+.img {
+  margin: 0 auto;
+  width: 500px;
+}
+img {
+  width: 100%;
+  height: auto;
 }
